@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Fetch GitHUb'){
             steps{
-                git 'https://github.com/masterghost2002/dockerizing_mern_stack.git'
+                git 'https://github.com/masterghost2002/CI_CD_JENKINS_REACT.git'
             }
         }
         stage('Build Image'){
@@ -25,7 +25,7 @@ pipeline{
                         docker stop clientcontainer && docker rm -f clientcontainer
                     fi
                 '''
-                sh 'docker run -d -p 3000:80 --name clientcontainer clientimage:latest'
+                sh 'docker run -d -p 80:80 --name clientcontainer clientimage:latest'
             }
         }
     }
