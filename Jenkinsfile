@@ -7,14 +7,12 @@ pipeline{
     stages{
         stage('Fetch GitHUb'){
             steps{
-                git 'https://github.com/masterghost2002/CI_CD_JENKINS_REACT.git'
+                git branch:'main', url:'https://github.com/masterghost2002/CI_CD_JENKINS_REACT.git'
             }
         }
         stage('Build Image'){
             steps{
-                dir('client/'){
-                    sh 'docker build -t clientimage:latest .'
-                }
+                sh 'docker build -t clientimage:latest .'
             }
         }
         stage('Deploy Container'){
