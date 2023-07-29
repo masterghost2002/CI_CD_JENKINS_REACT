@@ -14,7 +14,7 @@ function App() {
   }
   return (
     <div style={cssStyle}>
-      Random Count from React: {count}
+      Random Count from React CI CD PROJECT: {count}
     </div>
   )
 }
