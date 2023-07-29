@@ -1,13 +1,9 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
 function App() {
   const [count, setCount] = useState(0);
   useEffect(()=>{
-    const setRandomCount = ()=>{
-      const random = Math.floor((Math.random()*999+1000));
-      setCount(random);
-    }
-    setRandomCount(random);
+    const random = Math.floor((Math.random()*999+1000));
+    setCount(random);
   }, [])
   const cssStyle = {
     width:'100vw',
@@ -18,7 +14,7 @@ function App() {
   }
   return (
     <div style={cssStyle}>
-      Random Count from server: {count}
+      Random Count from React: {count}
     </div>
   )
 }
