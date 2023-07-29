@@ -3,12 +3,11 @@ import axios from 'axios';
 function App() {
   const [count, setCount] = useState(0);
   useEffect(()=>{
-    const getFromServer = async ()=>{
-      const res = await axios.get('http://localhost:5000/');
-      setCount(res.data.count);
-      // console.log(data);
+    const setRandomCount = ()=>{
+      const random = Math.floor((Math.random()*999+1000));
+      setCount(random);
     }
-    getFromServer();
+    setRandomCount(random);
   }, [])
   const cssStyle = {
     width:'100vw',
